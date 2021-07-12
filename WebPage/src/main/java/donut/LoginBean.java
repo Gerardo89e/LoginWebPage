@@ -3,7 +3,7 @@ package donut;
 public class LoginBean {
 	private String userEmail;
     private String password;
- 
+    
     public String getEmail() {
     return userEmail;
     }

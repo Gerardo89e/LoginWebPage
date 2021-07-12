@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet{
 	        }
 	        else if(userValidate.equals("Employee_Role"))
 	        {
-	            System.out.println("Editor's Home");
+	            System.out.println("Employee Home Page");
 	 
 	            HttpSession session = request.getSession();
 	            session.setAttribute("email", userName);

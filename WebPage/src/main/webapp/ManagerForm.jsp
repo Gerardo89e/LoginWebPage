@@ -3,17 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Books Store Application</title>
+    <title>User Insert Tool</title>
 </head>
 <body>
     <center>
-        <h1>Books Management</h1>
-        <h2>
+        <h1>Management Tool</h1>
+      <!--  <h2>
             <a href="/new1">Add New Users</a>
             &nbsp;&nbsp;&nbsp;
             <a href="/list3">List All Users</a>
              
-        </h2>
+        </h2>-->
     </center>
     <div align="center">
         <c:if test="${book != null}">
@@ -29,7 +29,7 @@
                         Edit Book
                     </c:if>
                     <c:if test="${book == null}">
-                        Add New Book
+                        Add New User
                     </c:if>
                 </h2>
             </caption>

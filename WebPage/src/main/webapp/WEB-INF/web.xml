@@ -120,6 +120,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ControllerServlet</servlet-name>
+		<url-pattern>/listEmployee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ControllerServlet</servlet-name>
 		<url-pattern>/new</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
- 
+ import donut.LoginBean;
 public class UserDAO {
 	private String jdbcURL;
     private String jdbcUsername;
@@ -42,13 +42,14 @@ public class UserDAO {
 
     public boolean insertUser(User book) throws SQLException {
         //String sql = "INSERT INTO book (title, author, price) VALUES (?, ?, ?)";
-        String sql = "INSERT INTO users (email, name, country) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO users (email, name, country,request) VALUES (?, ?, ? , ?)";
         connect();
          
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
         statement.setString(1,book.getEmail());
         statement.setString(2,book.getName());
         statement.setString(3,book.getCountry());
+        statement.setInt(4,book.getRequest());
         System.out.println(book.getEmail());
         System.out.println(book.getName());
         System.out.println(book.getCountry());
@@ -58,7 +59,53 @@ public class UserDAO {
         disconnect();
         return rowInserted;
     }
-
+    public List<User> listUsers(LoginBean loginBean) throws SQLException {
+        List<User> listEmployee = new ArrayList<>();
+        //LoginBean loginBean = new LoginBean();
+       
+      	 String userName = loginBean.getEmail();
+   	    String password = loginBean.getPassword();
+   	 
+   	   loginBean.setEmail(userName);
+   	    loginBean.setPassword(password);
+    	String searchQuery ="select * from users where email=? AND pass=?";
+    	 System.out.println("456");
+    	
+  	 
+         connect();
+          
+         //Statement statement = jdbcConnection.createStatement();
+         //ResultSet resultSet = statement.executeQuery(searchQuery);
+         PreparedStatement statement = jdbcConnection.prepareStatement(searchQuery);
+         statement.setString(1,loginBean.getEmail());
+         statement.setString(2, loginBean.getPassword());
+         ResultSet resultSet = statement.executeQuery();
+        System.out.println("Your user name is " + loginBean.getEmail());          
+         System.out.println("Your password is " + loginBean.getPassword());
+         System.out.println("Query: "+searchQuery);
+         while (resultSet.next()) {
+             //int id = resultSet.getInt("book_id");
+        	 
+             int id = resultSet.getInt("id");
+            
+             System.out.println("123");
+             String name = resultSet.getString("name");
+             String email = resultSet.getString("email");
+             String country = resultSet.getString("country");
+             int request = resultSet.getInt("request");
+       
+             User books = new User(id, name, email, country,request);
+             User info = new User(loginBean.getPassword(),loginBean.getEmail());
+             listEmployee.add(books);
+         }
+         resultSet.close();
+         statement.close();
+          
+         disconnect();
+          
+         return listEmployee;
+    }
+    
      
     public List<User> listAllUsers() throws SQLException {
         List<User> listBook = new ArrayList<>();

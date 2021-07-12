@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 //import candy.DBConnection;
 import candy.User;
 //import candy.Validate;
-
+import donut.LoginBean;
 public class ControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private UserDAO userDAO;
@@ -71,7 +71,20 @@ public class ControllerServlet extends HttpServlet {
     }
     
 	   // most of these function call back to the ManagerDAO and pass the values to in their appropriate function call
-  
+    private void listEmployee(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+    	LoginBean loginBean = new LoginBean();
+   	 String userName = request.getParameter("username");
+	    String password = request.getParameter("password");
+	   loginBean.setEmail(userName);
+	    loginBean.setPassword(password);
+	 
+       List<User> listEmployee = userDAO.listUsers(loginBean);
+    	System.out.println("789");
+        request.setAttribute("listEmployee", listEmployee);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("EmployeeList.jsp");
+        dispatcher.forward(request, response);
+    }
     private void listUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
     	System.out.println("789");
@@ -96,6 +109,15 @@ public class ControllerServlet extends HttpServlet {
         dispatcher.forward(request, response);
  
     }
+   /* private void  getUser(HttpServletRequest request, HttpServletResponse response) {
+    	
+    	String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String country = request.getParameter("country");
+        int id2=Integer.parseInt(request.getParameter("id"));
+        User newBook = new User(id2);
+    	 userDAO.getUser(newBook);
+    }*/
  
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
@@ -123,8 +145,8 @@ public class ControllerServlet extends HttpServlet {
         System.out.println(request2);
        
  
-        User user = new User(id, name, email, country,request2);
        
+        User user = new User(id, name, email, country,request2);
         userDAO.updateBook(user);
         response.sendRedirect("list");
     }

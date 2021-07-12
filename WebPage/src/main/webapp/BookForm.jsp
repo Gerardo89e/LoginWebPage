@@ -7,13 +7,13 @@
 </head>
 <body>
     <center>
-        <h1>Books Management</h1>
-        <h2>
+        <h1>data Management</h1>
+        <!-- <h2>
             <a href="/new">Add New Book</a>
             &nbsp;&nbsp;&nbsp;
             <a href="/list">List All Books</a>
              
-        </h2>
+        </h2>-->
     </center>
     <div align="center">
         <c:if test="${book != null}">
@@ -26,7 +26,7 @@
             <caption>
                 <h2>
                     <c:if test="${book != null}">
-                        Edit Book
+                        Edit Information
                     </c:if>
                     <c:if test="${book == null}">
                         Add New Book

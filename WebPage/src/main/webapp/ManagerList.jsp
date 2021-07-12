@@ -19,7 +19,7 @@
     </style>
 	<script type="text/javascript">
 	//key value
-	document.addEventListener("DOMContentLoaded", function(event) { 
+	/*document.addEventListener("DOMContentLoaded", function(event) { 
 	console.log("data ready");
 	const button=document.querySelector(".insertbtn"); 
 	button.addEventListener('click', function (event) { 
@@ -41,7 +41,7 @@
 				"country":country,
 				"requestId":req
 			}
-		/*
+		
 		(async () => {
 			  const rawResponse = await fetch('http://localhost:8081/anotherTest/LoginServlet/post', {
 			    method: 'POST',
@@ -56,7 +56,7 @@
 
 			  console.log(content);
 			})();
-		*/
+		
 		
 		
 		﻿fetch("http://localhost:8081/anotherTest/LoginServlet/post",{
@@ -75,10 +75,10 @@
 			alert(JSON.stringify(data) )
 		})
 	});
-}); 
+}); */
 //----------------------------------------------------------------------
 	
-	/*
+	
 	$(document).ready( function handleButton(){
 		console.log("it is ready");
 		$('.insertbtn').click( function(){
@@ -100,10 +100,8 @@
 					"country":country,
 					"requestId":req
 				}
-			async function postData(url = 'http://localhost:8081/anotherTest/LoginServlet/post', data = {postValue}) {
-				  // Default options are marked with *
-				
 			
+				
 			console.log(postValue);
 			handleJson(postValue);
 		})
@@ -116,14 +114,6 @@
 		//var id=$(this).attr('#id');
         //var age= $('#age').val();
 		console.log("it is a duck");
-		const postValue = {
-			"requestId" : id,
-			"name": name
-		}
-		
-		
-		
-		
 		
 		console.log(postValue+"its me");
 		$.ajax({
@@ -138,7 +128,7 @@
 				console.log(data);
 			}
 		});
-	}*/
+	}
 	//-----------------------------------------------------------------
 	/*
 	function updateFunction(anyname){
@@ -187,12 +177,12 @@
 </nav>
     <center>
         <h1>Manager Portal</h1>
-        <h2>
+         <h2>
             <a href="<%=request.getContextPath()%>/new1">Add New User</a>
             &nbsp;&nbsp;&nbsp;
-          <a href="<%=request.getContextPath()%>/listManager">List All User</a>
+        <!--  <a href="<%=request.getContextPath()%>/listManager">List All User</a>
              
-        </h2>
+        </h2>-->
     </center>
     <div align="center" >
                 <caption><h2>List of Users</h2></caption>

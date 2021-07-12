@@ -63,7 +63,7 @@ public class webJunit extends HttpServlet {
 			try {
 			    con =DBConnection.createConnection();
 			    st.getConnection().createStatement();
-				String sql = "update users set name = SpongeBob Sqaure Pants where id = 6";
+				String sql = "update users set name = SpongeBob Sqaure Pants where id = 2";
 				int result = st.executeUpdate(sql);
 				
 				if(result >0) {

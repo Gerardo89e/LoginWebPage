@@ -38,7 +38,7 @@
         <h2>
             <!--<a href="<%=request.getContextPath()%>/new">Add New Book</a>-->
             &nbsp;&nbsp;&nbsp;
-            <a href="<%=request.getContextPath()%>/list">List All Books</a>
+           <!-- <a href="<%=request.getContextPath()%>/list">List All Books</a>-->
              
         </h2>
     </center>
