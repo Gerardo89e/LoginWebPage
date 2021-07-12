@@ -24,16 +24,18 @@ public String authenticateUser(LoginBean loginBean)
  
     try
     {
+    	//calling the DBConnection function to create a connection
         con = DBConnection.createConnection();
         statement = con.createStatement();
         resultSet = statement.executeQuery("select email,pass,utype from users");
- 
+        //This is where the login determines if the user is admin or employee
         while(resultSet.next())
         {
+        	//we get the resulset from the loginServlet and test them in the If statement
             userNameDB = resultSet.getString("email");
             passwordDB = resultSet.getString("pass");
             roleDB = resultSet.getString("utype");
- 
+            //We return the string depending of the employee role in the users table
             if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("admin"))
             return "Admin_Role";
             else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("employee"))

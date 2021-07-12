@@ -42,7 +42,8 @@ public class ControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getServletPath();
- 
+        //here is where depending of the path it would execute the functions
+
         try {
             switch (action) {
             case "/new":
@@ -69,7 +70,8 @@ public class ControllerServlet extends HttpServlet {
         }
     }
     
-   
+	   // most of these function call back to the ManagerDAO and pass the values to in their appropriate function call
+  
     private void listUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
     	System.out.println("789");
@@ -97,27 +99,16 @@ public class ControllerServlet extends HttpServlet {
  
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-       /* String title = request.getParameter("title");
-        String author = request.getParameter("author");
-        float price = Float.parseFloat(request.getParameter("price"));
-        */
     	String name = request.getParameter("name");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
-
-        //int request2 = Integer.parseInt(request.getParameter("request"));
-       /*
-        System.out.println(title);
-        System.out.println(author);
-        System.out.println(price);
-*/
+        
         System.out.println(name);
         System.out.println(email);
         System.out.println(country);
-        //System.out.println(request2);
-       // User newBook = new User(title, author, price);
+        
         User newBook = new User(name, email, country);
-        //User newBook = new User(name, email, country,request2);
+        
         userDAO.insertUser(newBook);
         response.sendRedirect("list");
     }
@@ -130,13 +121,10 @@ public class ControllerServlet extends HttpServlet {
         String country = request.getParameter("country");
         int request2=Integer.parseInt(request.getParameter("request"));
         System.out.println(request2);
-        /*
-        String title = request.getParameter("title");
-        String author = request.getParameter("author");
-        float price = Float.parseFloat(request.getParameter("price"));*/
+       
  
         User user = new User(id, name, email, country,request2);
-       // User book = new User(id, title, author, price);
+       
         userDAO.updateBook(user);
         response.sendRedirect("list");
     }

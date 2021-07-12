@@ -9,7 +9,7 @@ public class Manager {
 	    protected int request;
 	    protected String pass;
 	    
-	 
+	    //Constructors are created
 	    public Manager () {
 	    }
 	 
@@ -45,7 +45,7 @@ public class Manager {
 			this.request=request;
 			this.email = email;
 		}
-
+	    //Getters and Setters start here
 		public int getId() {
 			return id;
 		}
@@ -93,23 +93,5 @@ public class Manager {
 		public void setPass(String pass) {
 			this.pass = pass;
 		}
-	/*
-		public String getUtype() {
-			return utype;
-		}
-
-		public void setUtype(String utype) {
-			this.utype = utype;
-		}
-	*/
-
-		
-	    
-	     /*
-	    public User(String title, String author, float price) {
-	        this.title = title;
-	        this.author = author;
-	        this.price = price;
-	        
-	    }*/
+	
 	}

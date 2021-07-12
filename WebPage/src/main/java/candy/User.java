@@ -1,12 +1,7 @@
 package candy;
 
 public class User {
-	/*protected int id;
-    protected String title;
-    protected String author;
-    protected float price;
-    protected int request;
-    */
+	
 	protected int id;
     protected String name;
     protected String country;
@@ -15,7 +10,7 @@ public class User {
     protected String pass;
     protected String utype;
     
- 
+ //constructors
     public User() {
     }
  
@@ -51,7 +46,7 @@ public class User {
 		this.request=request;
 		this.email = email;
 	}
-
+//Getters and Setters
 	public int getId() {
 		return id;
 	}
@@ -99,62 +94,5 @@ public class User {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-/*
-	public String getUtype() {
-		return utype;
-	}
 
-	public void setUtype(String utype) {
-		this.utype = utype;
-	}
-*/
-
-	
-    
-     /*
-    public User(String title, String author, float price) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
-        
-    }*/
- /*
-    public int getId() {
-        return id;
-    }
- 
-    public void setId(int id) {
-        this.id = id;
-    }
- 
-    public String getTitle() {
-        return title;
-    }
- 
-    public void setTitle(String title) {
-        this.title = title;
-    }
- 
-    public String getAuthor() {
-        return author;
-    }
- 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
- 
-    public float getPrice() {
-        return price;
-    }
- 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-    public float getRequest() {
-        return request;
-    }
- 
-    public void setRequest(int request) {
-        this.request = request;
-    }*/
 }

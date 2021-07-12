@@ -39,7 +39,7 @@ public class ManagerServlet extends HttpServlet {
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 	        String action = request.getServletPath();
-	 
+	        //here is where depending of the path it would execute the functions
 	        try {
 	            switch (action) {
 	            case "/new1":
@@ -66,7 +66,7 @@ public class ManagerServlet extends HttpServlet {
 	        }
 	    }
 	    
-	   
+	   // most of these function call back to the ManagerDAO and pass the values to in their appropriate function call
 	    private void listUser(HttpServletRequest request, HttpServletResponse response)
 	            throws SQLException, IOException, ServletException {
 	    	System.out.println("789");
@@ -127,13 +127,10 @@ public class ManagerServlet extends HttpServlet {
 	        String country = request.getParameter("country");
 	        int request2=Integer.parseInt(request.getParameter("request"));
 	        System.out.println(request2);
-	        /*
-	        String title = request.getParameter("title");
-	        String author = request.getParameter("author");
-	        float price = Float.parseFloat(request.getParameter("price"));*/
+	      
 	 
 	        Manager managerUser = new Manager(id, name, email, country,request2);
-	       // User book = new User(id, title, author, price);
+	      
 	        managerDAO.updateUser(managerUser);
 	        response.sendRedirect("listManager");
 	    }

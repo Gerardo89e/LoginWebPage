@@ -37,7 +37,7 @@ public class ManagerDAO {
 	            jdbcConnection.close();
 	        }
 	    }
-	     
+	     //Where all the logical query functions are executed and called back to the ManagerServlet
 	    public boolean insertUser(Manager book) throws SQLException {
 	        //String sql = "INSERT INTO book (title, author, price) VALUES (?, ?, ?)";
 	        String sql = "INSERT INTO users (email, name, country) VALUES (?, ?, ?)";
@@ -54,11 +54,8 @@ public class ManagerDAO {
 	        System.out.println(book.getName());
 	        System.out.println(book.getCountry());
 	        
-	        /*
-	        statement.setString(1, book.getTitle());
-	        statement.setString(2, book.getAuthor());
-	        statement.setFloat(3, book.getPrice());
-	         */
+	       
+	      
 	        boolean rowInserted = statement.executeUpdate() > 0;
 	        statement.close();
 	        disconnect();
@@ -81,10 +78,7 @@ public class ManagerDAO {
 	            int id = resultSet.getInt("id");
 
 	            System.out.println("123");
-	           /* String title = resultSet.getString("title");
-	            String author = resultSet.getString("author");
-	            float price = resultSet.getFloat("price");
-	            */
+	          
 	            String name = resultSet.getString("name");
 	            String email = resultSet.getString("email");
 	            String country = resultSet.getString("country");
@@ -104,7 +98,7 @@ public class ManagerDAO {
 	    }
 	     
 	    public boolean deleteUser(Manager book) throws SQLException {
-	        //String sql = "DELETE FROM book where book_id = ?";
+	       
 	        String sql = "DELETE FROM users where id = ?";
 
 	        connect();
@@ -119,7 +113,6 @@ public class ManagerDAO {
 	    }
 	     
 	    public boolean updateUser(Manager book) throws SQLException {
-	        //String sql = "UPDATE book SET title = ?, author = ?, price = ?";
 	        //String sql = "UPDATE users SET name = ?, email = ?, country = ?";
 	        String sql = "UPDATE users SET name = ?, email = ?, country = ?,request=?";
 	        sql += " WHERE id = ?";
@@ -131,12 +124,7 @@ public class ManagerDAO {
 	        statement.setString(3, book.getCountry());
 	        statement.setInt(4, book.getRequest());
 	        statement.setInt(5, book.getId());
-	         /*
-	        statement.setString(1, book.getTitle());
-	        statement.setString(2, book.getAuthor());
-	        statement.setFloat(3, book.getPrice());
-	        statement.setInt(4, book.getId());
-	        */
+	       
 	        boolean rowUpdated = statement.executeUpdate() > 0;
 	        statement.close();
 	        disconnect();
@@ -144,9 +132,9 @@ public class ManagerDAO {
 	    }
 	     
 	    public Manager getUser(int id) throws SQLException {
-	       // User book = null;
+	       
 	    	Manager user= null;
-	        //String sql = "SELECT * FROM book WHERE book_id = ?";
+	      
 	        String sql = "SELECT * FROM users WHERE id = ?";
 	         
 	        connect();
@@ -162,13 +150,7 @@ public class ManagerDAO {
 	             String country = resultSet.getString("country");
 	             int request = resultSet.getInt("request");
 	             user = new Manager(id, name, email, country,request);
-	        	/*
-	            String title = resultSet.getString("title");
-	            String author = resultSet.getString("author");
-	            float price = resultSet.getFloat("price");
-	            //int request = resultSet.getInt("request");
-	            book = new User(id, title, author, price);
-	            */
+	       
 	        }
 	         
 	        resultSet.close();
