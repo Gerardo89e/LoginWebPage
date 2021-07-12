@@ -104,6 +104,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<servlet-name>ManagerServlet</servlet-name>
 		<servlet-class>manager.ManagerServlet</servlet-class>
 	</servlet>
+	
+	    <servlet>
+		<servlet-name>PostServlet</servlet-name>
+		<servlet-class>manager.NewServlet</servlet-class>
+	</servlet>
     
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -166,7 +171,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<servlet-name>ManagerServlet</servlet-name>
 		<url-pattern>/delete6</url-pattern>
 	</servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>PostServlet</servlet-name>
+		<url-pattern>/LoginServlet/post</url-pattern>
+	</servlet-mapping>
 	
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
