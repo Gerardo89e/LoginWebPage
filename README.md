@@ -1,14 +1,17 @@
-# PROJECT NAME
+# Expense Reimbursement System (ERS) - Core
 
 ## Project Description
 
-Here goes your awesome project description!
+This is a project that creates a login page that sends either Manager or employee to be redirected to their appropriate page. The Manager will be able to see every employee and can update,add,delete, and accept or deny the employee ticket request for reimburstements. The Employee page will only show the employee details and can update their information and send request for reimbursement.
 
 ## Technologies Used
 
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Java - version 1.0
+* JSP - version 2.0
+* Bootstrap - version 3.0
+* OracleSQL - version 3.0
+* JDBC - version 3.0
+
 
 ## Features
 
