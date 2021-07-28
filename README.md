@@ -34,24 +34,22 @@ To-do list:
 ## Getting Started
    
 Window Setup
-*To get started with the project on Windows use the command git clone https://github.com/Gerardo89e/LoginWebPage.git into your cmd window termianl or your git bash terminal.
-*run the AWS RDS servers and allow the ports to allow all incoming and outcoming traffic
-*make sure to include the correct the aws url and password to access the rds database.
-*Make sure the ports for aws allow allow traffic incoming and leaving from the database.
-*Run TomCat Server by right clicking on the Maven project and run as server and go to the localhost port once tomcat finishes starting the server, a port will be given to the localhost where the server is running.
-*Copy the url and paste it into a web browser.
-*The page will load the login page and give the credentials of either employee or manager.
-
+* To get started with the project on Windows use the command git clone https://github.com/Gerardo89e/LoginWebPage.git into your cmd window termianl or your git bash terminal.
+* run the AWS RDS servers and allow the ports to allow all incoming and outcoming traffic
+* make sure to include the correct the aws url and password to access the rds database.
+* Make sure the ports for aws allow allow traffic incoming and leaving from the database.
+* Run TomCat Server by right clicking on the Maven project and run as server and go to the localhost port once tomcat finishes starting the server, a port will be given to the localhost where the server is running.
+* Copy the url and paste it into a web browser.
+* The page will load the login page and give the credentials of either employee or manager.
 
 Linux setup
-*For linux, all you have to do is just call the command git clone https://github.com/Gerardo89e/LoginWebPage.git to your terminal
-*run the AWS RDS servers and allow the ports to allow all incoming and outcoming traffic
-*make sure to include the correct the aws url and password to access the rds database.
-*Run TomCat Server by right clicking on the Maven project and run as Tomcat Server.
-*Wait for Tomcat to start and once it is finished, a port will be given to the localhost where the server is running
-*Copy the url and paste it into a web browser.
-*The page will load the login page and give the credentials of either employee or manager.
-
+* For linux, all you have to do is just call the command git clone https://github.com/Gerardo89e/LoginWebPage.git to your terminal
+* run the AWS RDS servers and allow the ports to allow all incoming and outcoming traffic
+* make sure to include the correct the aws url and password to access the rds database.
+* Run TomCat Server by right clicking on the Maven project and run as Tomcat Server.
+* Wait for Tomcat to start and once it is finished, a port will be given to the localhost where the server is running
+* Copy the url and paste it into a web browser.
+* The page will load the login page and give the credentials of either employee or manager.
 
 ## Usage
 > This project is mostly used to demonstrate how the project can redirect the person to the proper page depending from the user login credentials and allow the users to read data from the database and just update their information and send a reimbursement ticket request.Employee is limited to what they can do with the database because of restriction of having all the records of the employees. The manager has full access of the data of employees and can alter it. The manager can also accept and deny any reimbursement from the employee.
